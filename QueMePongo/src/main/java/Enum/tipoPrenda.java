@@ -1,0 +1,5 @@
+package Enum;
+
+public enum tipoPrenda {
+    ZAPATOS, CAMISA_MANGA_CORTA, PANTALON, REMERA, ANILLO, COLLAR, ARETE, CAMPERA, MEDIAS;
+}
