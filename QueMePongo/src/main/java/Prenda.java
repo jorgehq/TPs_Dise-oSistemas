@@ -3,52 +3,49 @@ import Enum.*;
 
 public class Prenda {
         private  tipoPrenda tipo;
-        private categoria cate;
         private material m;
 
         private colorPrimario colorP;
 
         private colorSecundario colorS;
 
-        public Prenda(tipoPrenda tipo, categoria cate, material m,colorPrimario colorP) {
+        private trama t;
+
+
+
+        public Prenda(tipoPrenda tipo, material m,colorPrimario colorP,colorSecundario colorS,trama t) {
+
+              //  verificarNulos(tipo,m,colorP);
+
                 this.tipo = tipo;
-                this.cate = cate;
                 this.m = m;
                 this.colorP = colorP;
+                this.colorS= colorS;
+                this.t=t;
+
+        }
+/*
+        public boolean verificarNulos(tipoPrenda tipo, material m,colorPrimario colorP){
+                if(tipo==null || m==null || colorP==null){
+                       throw new NullPointerException("La prenda le faltan datos");
+                }
+                return true;
         }
 
+ */
         @Override
         public String toString() {
                 return "Prenda{" +
                         "tipo=" + tipo +
-                        ", cate=" + cate +
+                        ", categoria=" + tipo.getCate() +
                         ", m=" + m +
                         ", colorP=" + colorP +
 
                         '}';
         }
 
-        public Prenda() {
-        }
-
-        public material getMaterial() {
-                return m;
-        }
-
-        public void setMaterial(material m) {
-                this.m = m;
-        }
-
-        public void setTipo(tipoPrenda tipo) {
-                this.tipo = tipo;
-        }
-
-        public void setCate(categoria cate) {
-                this.cate = cate;
-        }
-
-        public void setColorP(colorPrimario colorP) {
-                this.colorP = colorP;
+        public void setT(trama t) {
+                this.t = t;
         }
 
         public void setColorS(colorSecundario colorS) {
@@ -59,15 +56,9 @@ public class Prenda {
                 return tipo;
         }
 
-        public categoria getCate() {
-                return cate;
-        }
-
         public colorPrimario getColorP() {
                 return colorP;
         }
 
-        public colorSecundario getColorS() {
-                return colorS;
-        }
+
 }
